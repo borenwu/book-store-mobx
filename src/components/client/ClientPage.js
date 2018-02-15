@@ -27,12 +27,16 @@ export default class ClientPage extends React.Component{
         this.props.store.createClient(client);
     }
 
+    handleDelete(clientId){
+        this.props.store.deleteClientById(clientId)
+    }
+
     render(){
         return(
             <div>
                 <h3>Clients</h3>
                 <ul>
-                   {this.props.store.clients.map((c,i)=>  <li key={i}><Link  to={`/clients/${c.id}`}>View {c.client_name}</Link></li>)}
+                   {this.props.store.clients.map((c,i)=>  <li key={i}><Link  to={`/clients/${c.id}`}>View {c.client_name}</Link> <button onClick={this.handleDelete.bind(this,c.id)}>delete</button></li>)}
                 </ul>
 
                 <div>

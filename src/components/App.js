@@ -1,5 +1,6 @@
 import React  from 'react';
 import {Link} from 'react-router';
+import DevTools from 'mobx-react-devtools'
 
 
 const App = (props) => {
@@ -23,6 +24,7 @@ const App = (props) => {
             </nav>
             {/* Each smaller components */}
             {props.children}
+            {/*<DevTools />*/}
         </div>
     );
 };
